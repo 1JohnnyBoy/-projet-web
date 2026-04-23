@@ -1,5 +1,11 @@
 # Projet Web — Catalogue de Smartphones
 
+# Particpants :
+-KAMGANG OMBOKO Johan Carol : johancarol.kamgang@student.helb-prigogine.be
+-VIN Gabriel : gabriel.vin@student.helb-prigogine.be
+-OUACHIKH Mohamed : mohamed.ouachikh@student.helb-prigogine.be
+-OUARRAS Youssef : youssef.ouarras@student.helb-prigogine.be
+
 Application web de gestion d'un catalogue de smartphones, développée en PHP/MySQL avec XAMPP.
 
 ---
