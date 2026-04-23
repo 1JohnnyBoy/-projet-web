@@ -2,11 +2,13 @@
 session_start();
 /*$connexion = new PDO('mysql:host=127.0.0.1;dbname=smartphones', 'root', '');*/
 
-$env = "railway"; // change en "railway" quand tu veux utiliser Railway
-if($env === "railway"){
-    $connexion = new PDO('mysql:host=tramway.proxy.rlwy.net;port=29371;dbname=railway;charset=utf8 ', 'root', 'tiecApTdRRBoQjwnyfaqqKKgptcwNNVo');
-} else {
+$env = "local"; // change en "railway" quand tu veux utiliser Railway
+if($env === "local"){
     $connexion = new PDO('mysql:host=127.0.0.1;dbname=smartphones', 'root', '');
+    
+} else {
+    $connexion = new PDO('mysql:host=tramway.proxy.rlwy.net;port=29371;dbname=railway;charset=utf8 ', 'root', 'tiecApTdRRBoQjwnyfaqqKKgptcwNNVo');
+    
 }
 $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -83,7 +85,7 @@ if(isset($_POST['Acheter'])){
                 method: "POST",
                 data: { modele: modele },
                 success: function(data) {
-                    $("#cadres").html(data);
+                    $("#cadre").html(data);
                 }
             });
         }
