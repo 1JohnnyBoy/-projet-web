@@ -3,7 +3,12 @@ session_start();
 /*$connexion = new PDO('mysql:host=127.0.0.1;dbname=smartphones', 'root', '');*/
 
 $env = "railway"; // change en "railway" quand tu veux utiliser Railway
-
+if($env === "railway"){
+    $connexion = new PDO('mysql:host=tramway.proxy.rlwy.net;port=29371;dbname=railway;charset=utf8 ', 'root', 'tiecApTdRRBoQjwnyfaqqKKgptcwNNVo');
+} else {
+    $connexion = new PDO('mysql:host=127.0.0.1;dbname=smartphones', 'root', '');
+}
+$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
