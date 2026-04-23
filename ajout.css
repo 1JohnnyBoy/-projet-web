@@ -1,0 +1,62 @@
+
+*{
+    box-sizing:border-box;
+}
+body{
+    display: flex;/*Utilisation de Flexbox pour centrer le contenu(div:container)*/
+    justify-content: center;/*Centrage horizontal du contenu de la page(div:container)*/
+    align-items: center;/*Centrage vertical du contenu de la page(div:container)*/
+    background-color: #e8eaf0;
+}
+
+.container{
+    display:flex;
+    flex-direction: column;/*Empile chaque élément(h1,h2,form) du container les uns en dessous des autres*/
+    align-items: center;/*Centre chaque élément du container de façon horizontale*/
+    gap:5px;/*Espace de 5px entre chaque élément du container*/
+    padding: 50px;
+    margin-top: 50px;/*plus les pixels sont grands, plus le container descend vers le bas de la page*/
+    background-color: white;
+    width: 400px;
+    min-height: 450px;/*Avec min-height, le container fait au moins 450px mais peut grandir si le contenu dépasse, donc le bouton ne déborde plus.*/
+    border-color: #dde1ed !important;
+    border-radius:8px;
+    
+    
+}
+
+.container form{
+    display:flex;
+    flex-direction: column;/*Empile chaque élément du form les uns en dessous des autres*/
+    align-items: center;
+    gap:15px;
+    width:100%;/*les input et le button prennent toute la largeur du container(bon pas toute à cause du padding)*/
+}
+.container input{
+    text-align: center;
+    display: block;
+    padding: 6px;
+    font-weight: 300;
+    border: 2px solid;
+    box-sizing: border-box;
+    width:100%;
+    
+}
+.container button{
+    text-align: center;
+    display: block;
+    padding: 6px;
+    font-weight: 300;
+    color: white;
+    background-color:#005ad4;
+    border: 2px solid #005ad4;
+    border-radius:4px;
+    box-sizing: border-box;
+    cursor:pointer;
+    width:100%;
+}
+.container texte{
+    gap:5px;
+    text-align: center;
+    width:80%;
+}

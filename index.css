@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+    margin: 0;/*supp les marges par défaut du navigateur*/
+    padding: 0;/*supp les marges par défaut du navigateur*/
+}
+
+body {
+    font-family: sans-serif;
+}
+
+#entete {
+    position: relative;
+    width: 100%;
+}
+
+#entete img {
+    display: block;
+    width: 100%;
+}
+
+#entete p {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+#phoneform {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;/*Utilisation de Flexbox pour centrer le contenu*/
+    justify-content: center;/*Centrage horizontal du contenu du form*/
+}
+
+#phoneform form {
+    display: flex;
+    gap: 0.5rem;
+}
+/*
+#cadre{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2px;
+    vertical-align:middle;
+}
+
+#tel{
+    border:1px solid black;
+    width:150px;
+    min-height:200px;
+    margin:10px;
+    padding-left:20px;
+    float:left;
+    align-items:center;
+    gap:0.5rem;
+}
+*/
+#cadre{
+    display:flex;
+    flex-wrap: wrap;/*les bordures comprenant les images passent à la ligne si l'écran est trop petit*/;
+    gap:10px;
+    padding:10px;
+}
+
+#tel{
+    border:3px solid black;
+    width:150px;
+    min-height:200px;
+    margin:10px;
+    padding:10px;
+    display: flex;/*Utilisation de Flexbox pour centrer l'image*/
+    flex-direction:column;
+    align-items:center;/*l'image est centrée dans la bordure*/
+    text-align: center;
+    gap:0.5rem;
+}
+#tel img{
+    padding:5px;
+    width:130px;
+    height:100px;
+    object-fit: contain;/*évite que l'image soit déformée*/
+}
+
+/* Tablette : <= 768px */
+@media screen and (max-width: 768px) {
+    #entete img {
+        height: 220px;
+        object-fit: cover;
+    }
+
+    #entete p {
+        font-size: 1.4rem;
+        top: 50%;
+    }
+
+    #phoneform {
+        bottom: 10%;
+    }
+
+    #phoneform form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #cadre {
+        justify-content: center;
+    }
+
+    #tel {
+        width: 42%;
+        min-height: 180px;
+    }
+
+    #tel img {
+        width: 100%;
+        height: 90px;
+    }
+}
+
+/* Smartphone : <= 480px */
+@media screen and (max-width: 480px) {
+    #entete img {
+        height: 160px;
+    }
+
+    #entete p {
+        font-size: 1rem;
+        top: 40%;
+    }
+
+    #phoneform {
+        bottom: 8%;
+        width: 90%;
+    }
+
+    #phoneform form input {
+        width: 100%;
+        padding: 0.4rem;
+    }
+
+    #cadre {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    #tel {
+        width: 90%;
+        min-height: unset;
+        margin: 4px 0;
+    }
+
+    #tel img {
+        width: 120px;
+        height: 90px;
+    }
+}
+
+
