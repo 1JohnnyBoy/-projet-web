@@ -1,8 +1,20 @@
 <?php
 session_start();
-$connexion = new PDO('mysql:host=127.0.0.1;dbname=email_base', 'root', '');
+/*$connexion = new PDO('mysql:host=127.0.0.1;dbname=email_base', 'root', '');*/
+$env = "railway";
 
-/*$connexion = new PDO('mysql:host=127.0.0.1;dbname=email_base','root','');*/
+if($env === "local"){
+    $connexion = new PDO('mysql:host=127.0.0.1;dbname=email_base', 'root', '');
+} else {
+    $connexion = new PDO(
+        'mysql:host=' . getenv('DB_HOST') . ';port=' . getenv('DB_PORT') . ';dbname=' . getenv('DB_NAME') . ';charset=utf8',
+        getenv('DB_USER'),
+        getenv('DB_PASSWORD')
+    );
+}
+$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
 /*
 if($connexion) {
     echo "Connexion réussie";
