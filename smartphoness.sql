@@ -3,7 +3,6 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql-sleazyjohan.alwaysdata.net
--- Generation Time: Aug 25, 2026 at 02:28 PM
 -- Server version: 11.4.12-MariaDB
 -- PHP Version: 8.4.24
 
